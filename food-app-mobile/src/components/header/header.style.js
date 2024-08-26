@@ -1,9 +1,12 @@
+
 import { COLORS, FONT_SIZE } from "../../constants/theme"
+
 
 export const styles = {
     header:{
         alignItems:"center",
         width:"100%",
+        
         
     },
     logo: {

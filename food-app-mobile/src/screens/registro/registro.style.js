@@ -3,27 +3,27 @@ import { Platform } from "react-native"
 export const styles = {
     container: {
         flex:1,
-        marginTop: Platform.OS === 'android' ? 60:40,
+        marginTop: Platform.OS === 'android' ? 60:20,
         padding:40,
         alignItems:"center",
         justifyContent:"center",
     },
     form:{
         width:"100%",
-        marginBottom:25,
+        marginBottom:15,
         
     },
     formGroup:{
         width:"100%",
-        marginTop:50,
+        marginTop:30,
         marginBottom:40,
 
     },
     footer:{
         width:"100%",
-        bottom:0,
         position:"absolute",
-        marginBottom:40,
+        bottom:0,
+        marginBottom:20,
 
 
     },
