@@ -5,7 +5,14 @@ function TextBox(props) {
     return ( 
         <>
         <Text style={styles.label}>{props.label}</Text>
-        <TextInput style={styles.input} placeholder={props.placeholders} secureTextEntry={props.isPasswords}/> 
+        <TextInput 
+            style={styles.input} 
+            placeholder={props.placeholders} 
+            onChangeText={(texto)=>props.onChangeText(texto)} 
+            value={props.value} 
+            secureTextEntry={props.isPasswords
+
+            }/> 
         </>
      );
 }

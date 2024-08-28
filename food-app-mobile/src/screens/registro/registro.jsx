@@ -4,11 +4,12 @@ import { styles } from './registro.style.js';
 import Header from '../../components/header/header.jsx';
 import TextBox from '../../components/textbox/textbox.jsx';
 import Button from '../../components/button/button.jsx';
+import { useState } from 'react';
 
-function Registro() {
+function Registro(props) {
     return (
-        <ScrollView>
-            <View style={styles.container}>
+        <View style={styles.container}>
+            <ScrollView style={styles.scrollView} automaticallyAdjustKeyboardInsets={true}>
                 <Header texto="Criar uma conta" />
                 <View style={styles.formGroup}>
                     <View style={styles.form}>
@@ -24,17 +25,13 @@ function Registro() {
                         <TextBox label="Confirme sua Senha" placeholders="Confirme Sua Senha Desejada" isPasswords />
                     </View>
                     <View style={styles.form}>
-                        <Button texto="Proximo Passo" />
+                        <Button texto="Proximo Passo"  onPress={()=> props.navigation.navigate("registro2")}/>
 
                     </View>
                 </View>
-                <View style={styles.footer}>
-                    <TouchableOpacity>
-                        <Text style={styles.footerText}>Acessar a minha conta</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        </ScrollView>
+
+            </ScrollView>
+        </View>
     )
 }
 

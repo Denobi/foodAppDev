@@ -3,7 +3,7 @@ import { Platform } from "react-native"
 export const styles = {
     container: {
         flex:1,
-        // marginTop: Platform.OS === 'android' ? 60:40,
+        // marginTop: Platform.OS === 'android' ? 60:20,
         padding:40,
         alignItems:"center",
         justifyContent:"center",
@@ -11,20 +11,26 @@ export const styles = {
     },
     form:{
         width:"100%",
-        marginBottom:25,
+        marginBottom:15,
         
+    },
+    scrollView:{
+        width:'100%',
+    },
+    formHorizontal:{
+        flexDirection:"row",
     },
     formGroup:{
         width:"100%",
-        marginTop:50,
+        marginTop:30,
         marginBottom:40,
 
     },
     footer:{
         width:"100%",
-        bottom:0,
         position:"absolute",
-        marginBottom:40,
+        bottom:0,
+        marginBottom:20,
 
 
     },
@@ -32,5 +38,17 @@ export const styles = {
         textAlign:"center",
         color:COLORS.dark_gray,
         fontSize:FONT_SIZE.md,
+    },
+    form70:{
+        width:"70%",
+        marginBottom:15,
+        paddingRight:10,
+
+    },
+    form30:{
+        width:"30%",
+        marginBottom:15,
+        
+
     }
 }
