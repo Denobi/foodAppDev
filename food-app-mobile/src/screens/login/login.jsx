@@ -15,8 +15,8 @@ function Login(props) {
     }
     return (
         <View style={styles.container}>
-            {/* <Header texto="Acesse sua conta..." /> */}
-            <Header texto={email + "" + passw}/>
+            <Header texto="Acesse sua conta..." />
+            {/* <Header texto={email + "" + passw}/> */}
             <View style={styles.formGroup}>
                 <View style={styles.form}>
                     <TextBox label="Email" onChangeText={(texto)=>setEmail(texto)} value={email}  placeholders="Digite Seu Email cadastrado" />
