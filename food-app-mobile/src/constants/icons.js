@@ -1,4 +1,5 @@
 import back from "../assets/back.png";
+import back2 from "../assets/back2.png";
 import remove from "../assets/delete.png";
 import logo from "../assets/logo.png";
 import cart from "../assets/cart.png";
@@ -9,6 +10,7 @@ import more from "../assets/mais.png";
 import expandir from "../assets/expandir.png";
 import dados from "../assets/meus-dados.png";
 import logout from "../assets/logout.png";
+import location from "../assets/location.png";
 
 
 import abaHome from "../assets/aba-home.png";
@@ -16,4 +18,6 @@ import abaFavorito from "../assets/aba-favorito.png";
 import abaPedidos from "../assets/aba-pedidos.png";
 import abaPerfil from "../assets/aba-perfil.png";
 
-export default { back, remove, logo, cart, favoritoFull2, empty, endereco, more,expandir, dados, logout, abaHome, abaFavorito,abaPedidos, abaPerfil };
+export default { back,back2, remove, logo, cart, favoritoFull2, 
+                empty, endereco, more,expandir, dados, logout, abaHome, 
+                abaFavorito,abaPedidos, abaPerfil, location };

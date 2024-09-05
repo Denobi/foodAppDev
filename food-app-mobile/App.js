@@ -5,7 +5,7 @@ import RoutesAuth from "./src/routesAuth.js";
 
 export default function App() {
 
-  const isUserAuth = false;
+  const isUserAuth = true;
   return (
     isUserAuth ? <RoutesAuth/> : <Routes/>
 

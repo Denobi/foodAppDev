@@ -1,10 +1,10 @@
 import { View, FlatList, Text, Image } from 'react-native';
-import { styles } from './favoritos.style';
+import { styles } from './aba-favoritos.style';
 import { restaurantes } from '../../constants/dados';
 import Restaurante from '../../components/restaurante/restaurante';
 import icons from '../../constants/icons';
 
-const Favoritos = () => {
+const AbaFavoritos = () => {
     return (
 
             <View style={styles.container}>
@@ -32,4 +32,4 @@ const Favoritos = () => {
     )
 }
 
-export default Favoritos
+export default AbaFavoritos

@@ -1,52 +1,27 @@
 
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Perfil from './screens/perfil/perfil';
-import Pedidos from './screens/pedidos/pedidos';
-import Favoritos from './screens/favoritos/favoritos';
-import Home from './screens/home/home';
-import icons from "./constants/icons";
-import { Image } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Principal from "./screens/principal/principal";
+import Cardapio from "./screens/cardapio/cardapio";
+import Busca from "./screens/busca/busca";
 
-const Tab = createBottomTabNavigator();
+
+const Stack = createNativeStackNavigator();
 
 function RoutesAuth() {
     return (
         <NavigationContainer>
-            <Tab.Navigator screenOptions={{ tabBarShowLabel: false }} >
-
-                <Tab.Screen name="home" component={Home} options={{
-                    headerShown: false,
-                    tabBarIcon: ({ focused }) => {
-                        return <Image source={icons.abaHome} style={{ width: 25, height: 25, opacity: focused ? 1 : 0.4 }} />
-                    },
-                }} />
-                <Tab.Screen name="Favoritos" component={Favoritos} options={{
-                    title: "Favoritos",
-                    headerTitleAlign: "center",
+         <Stack.Navigator >
+            <Stack.Screen name="principal" component={Principal} options={{headerShown:false}}/>
+            <Stack.Screen name="cardapio" component={Cardapio} options={{headerShown:false}}/>
+            <Stack.Screen name="busca" component={Busca} options={{ 
                     headerShadowVisible:false,
-                    tabBarIcon: ({ focused }) => {
-                        return <Image source={icons.abaFavorito} style={{ width: 25, height: 25, opacity: focused ? 1 : 0.4 }} />
-                    },
-                }} />
-                <Tab.Screen name="Pedidos" component={Pedidos} options={{
-                    title: "Pedidos",
-                    headerTitleAlign: "center",
-                    headerShadowVisible:false,
-                    tabBarIcon: ({ focused }) => {
-                        return <Image source={icons.abaPedidos} style={{ width: 25, height: 25, opacity: focused ? 1 : 0.4 }} />
-                    },
-                }} />
-                <Tab.Screen name="Perfil" component={Perfil} options={{
-                    title: "Perfil",
-                    headerTitleAlign: "center",
-                    headerShadowVisible:false,
-                    tabBarIcon: ({ focused }) => {
-                        return <Image source={icons.abaPerfil} style={{ width: 25, height: 25, opacity: focused ? 1 : 0.4 }} />
-                    },
-                }} />
-
-            </Tab.Navigator>
+                    headerTitleAlign:"center",
+                    title:"Resultado da Busca",
+                    headerBackTitle:"voltar",
+                    }}/>
+                    
+         </Stack.Navigator>
         </NavigationContainer>
     );
 }

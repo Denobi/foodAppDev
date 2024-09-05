@@ -1,10 +1,10 @@
 import { View, FlatList, Text, Image } from 'react-native';
-import { styles } from './pedidos.style';
+import { styles } from './aba-pedidos.style';
 import { pedidos } from '../../constants/dados';
 import Pedido from '../../components/pedido/pedido';
 import icons from '../../constants/icons';
 
-const Pedidos = () => {
+const AbaPedidos = () => {
     return (
 
             <View style={styles.container}>
@@ -34,4 +34,4 @@ const Pedidos = () => {
     )
 }
 
-export default Pedidos
+export default AbaPedidos
