@@ -4,7 +4,10 @@ import { restaurantes } from '../../constants/dados';
 import Restaurante from '../../components/restaurante/restaurante';
 import icons from '../../constants/icons';
 
-const AbaFavoritos = () => {
+const AbaFavoritos = (props) => {
+    function onClickRest (){
+        props.navigation.navigate("cardapio");
+    }
     return (
 
             <View style={styles.container}>
@@ -16,6 +19,7 @@ const AbaFavoritos = () => {
                     endereco={item.endereco} 
                     logotipo={item.logotipo}
                     icon={icons.remove}
+                    onClickRest={onClickRest}
                     />
                 }}
                 contentContainerStyle={styles.containerList}

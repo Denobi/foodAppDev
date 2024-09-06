@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./screens/login/login";
 import Registro from "./screens/registro/registro";
 import Registro2 from "./screens/registro2/registro2";
+import DetalheProduto from "./screens/detalhe-produto/detalhe-produto";
 
 
 
@@ -16,6 +17,7 @@ function Routes() {
             <Stack.Navigator  >
             
                 
+            <Stack.Screen name="detalheProduto" component={DetalheProduto} options={{headerShown:false}}/>
                
                 <Stack.Screen name="login" component={Login} options={{headerShown:false}}/>
                 <Stack.Screen name="registro" component={Registro} options={{ 

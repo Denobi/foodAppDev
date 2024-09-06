@@ -5,14 +5,13 @@ import icons from '../../constants/icons';
 import Produto from '../../components/produto/produto';
 
 function Cardapio(props) {
-    function OpenCardapio(){
-        props.navigation.navigate("principal")
-      }
-    return (
-        <View style={styles.container}>
+   function returnHome() {
+    props.navigation.navigate("principal")
+   }
+    return <View style={styles.container}>
             <View style={styles.containerFoto}>
                 <Image source={restaurante.foto} style={styles.foto} resizeMode='contain' />
-                <TouchableOpacity style={styles.containerBack} onPress={OpenCardapio}>
+                <TouchableOpacity style={styles.containerBack} onPress={returnHome }>
                     <Image source={icons.back2} style={styles.back} />
                 </TouchableOpacity>
             </View >
@@ -45,7 +44,7 @@ function Cardapio(props) {
                 }
             </ScrollView>
         </View>
-    )
+    
 }
 
 export default Cardapio;

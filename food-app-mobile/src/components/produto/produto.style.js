@@ -34,6 +34,14 @@ export const styles = {
         marginTop:8,
 
     },
+    containerDelete:{
+        alignItems:"flex-end",
+        marginTop:8,
+    },
+    delete:{
+        width: 25,
+        height: 25,
+    },
         
    
 }

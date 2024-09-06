@@ -1,4 +1,4 @@
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./aba-home.style";
 import icons from "../../constants/icons";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -11,8 +11,9 @@ import Restaurante from "../../components/restaurante/restaurante";
 
 function AbaHome(props) {
   const [search, setSearch] = useState();
-  function OpenCardapio(){
-    props.navigation.navigate("cardapio");
+
+  function OpenCardapio() {
+    props.navigation.navigate("cardapio")
   }
 
 
@@ -20,7 +21,9 @@ function AbaHome(props) {
     <SafeAreaView style={styles.container}>
       <View style={styles.headerBar}>
         <Image source={icons.logo} style={styles.logo} />
-        <Image source={icons.cart} style={styles.cart} />
+        <TouchableOpacity onPress={() => props.navigation.navigate("checkout")}>
+          <Image source={icons.cart} style={styles.cart} />
+        </TouchableOpacity>
       </View>
       <View style={styles.search}>
         <TextBox placeholders="O que vamos pedir hoje?" onChangeText={(texto) => setSearch(texto)} value={search} />
@@ -35,7 +38,7 @@ function AbaHome(props) {
                 nome={restaurante.nome}
                 endereco={restaurante.endereco}
                 icon={icons.favoritoFull2}
-                onPress={OpenCardapio}
+                onClickRest={OpenCardapio}
               />
             </View>
           })

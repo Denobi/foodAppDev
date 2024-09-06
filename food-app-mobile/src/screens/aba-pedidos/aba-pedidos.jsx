@@ -4,7 +4,11 @@ import { pedidos } from '../../constants/dados';
 import Pedido from '../../components/pedido/pedido';
 import icons from '../../constants/icons';
 
-const AbaPedidos = () => {
+const AbaPedidos = (props) => {
+
+    function detalhePedidos(){
+        props.navigation.navigate("detalhepedido");
+    }
     return (
 
             <View style={styles.container}>
@@ -18,7 +22,7 @@ const AbaPedidos = () => {
                     valor={item.vl_total}
                     dt_pedidos={item.dt_pedido}
                     status={item.status}
-                    />
+                    onclickPedido={detalhePedidos }/>
                 }}
                 contentContainerStyle={styles.containerList}
                 ListEmptyComponent={()=>{

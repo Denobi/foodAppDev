@@ -6,7 +6,7 @@ import { styles } from "./restaurante.style";
 
 function Restaurante(props) {
     return (
-        <TouchableOpacity style={styles.restaurante} onPress={()=>props.onPress()}>
+        <TouchableOpacity style={styles.restaurante} onPress={()=>props.onClickRest()}>
             <Image source={props.logotipo} style={styles.logotipo} />
             <View style={styles.textos}>
                 <Text style={styles.nome}>{props.nome}</Text>
