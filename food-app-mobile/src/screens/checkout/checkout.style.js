@@ -40,8 +40,12 @@ export const styles = {
         fontWeight: "bold"
     },
     flatContainer:{
-        marginTop:20,
+        marginTop:20, 
         padding:3,
+    }, 
+    containerBtn:{
+        marginTop:10,
+        paddingTop:7,
     }
  
 }

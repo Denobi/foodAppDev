@@ -47,8 +47,8 @@ function Checkout (props) {
             <Text style={styles.total}>R$ 71,00</Text>
 
         </View>
-        <View>
-            <Button/>
+        <View style={styles.containerBtn}>
+            <Button texto="Finalizar Pedido"/>
         </View>
     </View>
 </View>
