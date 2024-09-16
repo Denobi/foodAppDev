@@ -7,5 +7,11 @@ async function Listar(){
 
     return pedidos;
 }
+async function ListarId(id_pedido){
 
-export default{Listar}
+     const pedido = await repositoryPedido.ListarId(id_pedido);
+
+    return pedido;
+}
+
+export default{Listar, ListarId}

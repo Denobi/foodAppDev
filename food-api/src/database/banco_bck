@@ -1,0 +1,4 @@
+select f.*, e.ICONE,e.NOME,e.ENDERECO,e.COMPLEMENTO,e.BAIRRO,e.CIDADE,e.UF
+from USUARIO_FAVORITO f
+join EMPRESA e on (e.ID_EMPRESA = f.ID_EMPRESA)
+where f.ID_USUARIO = ?
