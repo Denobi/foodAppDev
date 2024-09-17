@@ -8,5 +8,12 @@ async function Favoritos(id_usuario){
 
     return favoritos;
 }
+async function Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep) {
 
-export default{Favoritos}
+    
+
+    const usuario = await repositoryUsuario.Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep);
+
+    return usuario;
+}
+export default{Favoritos, Inserir}
