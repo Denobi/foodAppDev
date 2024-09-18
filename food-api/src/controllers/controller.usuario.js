@@ -1,10 +1,9 @@
 
 import serviceUsuario from "../services/service.usuario.js";
-import jwt from "../token.js";
 
 async function Favoritos(req, res) {
     try {
-        const id_usuario = 1;
+        const id_usuario = req.id_usuario;
         const favoritos = await serviceUsuario.Favoritos(id_usuario);
 
         res.status(200).json(favoritos);
@@ -16,25 +15,15 @@ async function Login(req, res) {
 
     const { email, senha } = req.body;
 
-    // const email =req.body.email;
-    // const senha =req.body.senha;
+    const usuario = await serviceUsuario.Login(email, senha);
 
-    if (email == "teste@teste.com" && senha == "12345") {
-
-        res.status(200).json({
-            id_user: 1,
-            email: "heber@teste.com",
-            nome: "Heber Stein Mazutti",
-            token: jwt.CreateJWT(123)
-        })
+    if (usuario.lenght == 0) {
+        res.status(401).json({ error: "Email ou Senha Invalido" })
+    } else {
+        res.status(200).json(usuario);
     }
-    else {
 
-        res.status(401).json({
-            error: "E-mail ou Senha invalidos ou errados"
 
-        })
-    }
 }
 async function Inserir(req, res) {
     try {
@@ -42,8 +31,8 @@ async function Inserir(req, res) {
 
         const usuario = await serviceUsuario.Inserir(nome, email, senha, endereco, complemento, bairro, cidade, uf, cep);
 
-        usuario.token=jwt.CreateJWT(usuario.id_usuario)
-        
+
+
         res.status(201).json(usuario);
 
     } catch (error) {
@@ -53,6 +42,19 @@ async function Inserir(req, res) {
 
 
 }
+async function Perfil(req, res) {
+    try {
+        const id_usuario = req.id_usuario;
+        const usuario = await serviceUsuario.Perfil(id_usuario);
 
-export default { Favoritos, Login, Inserir }
+        res.status(200).json(usuario);
+    } catch (error) {
+        res.status(500).json({ error })
+    }
+
+
+
+}
+
+export default { Favoritos, Login, Inserir, Perfil }
 

@@ -22,9 +22,10 @@ router.get("/pedidos", jwt.ValidateJWT, controllerPedido.Listar);
 router.get("/pedidos/:id_pedido", jwt.ValidateJWT, controllerPedido.ListarId);
 
 
-router.post("/usuarios/login", jwt.ValidateJWT, controllerUsuario.Login);
+router.post("/usuarios/login", controllerUsuario.Login);
+router.get("/usuarios/favoritos", jwt.ValidateJWT, controllerUsuario.Favoritos);
 router.post("/usuarios",controllerUsuario.Inserir );
-router.get("/usuarios/favoritos", controllerUsuario.Favoritos);
+router.get("/usuarios/perfil", jwt.ValidateJWT,controllerUsuario.Perfil );
 
 export default router;
 
