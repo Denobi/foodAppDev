@@ -13,5 +13,11 @@ async function ListarId(id_pedido){
 
     return pedido;
 }
+async function Inserir(id_usuario,dados){
 
-export default{Listar, ListarId}
+     const pedido = await repositoryPedido.Inserir(id_usuario,dados);
+
+    return pedido;
+}
+
+export default{Listar, ListarId,Inserir}
