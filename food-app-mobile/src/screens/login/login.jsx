@@ -1,18 +1,57 @@
 
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './loginStyles';
 import Header from '../../components/header/header.jsx';
 import TextBox from '../../components/textbox/textbox.jsx';
 import Button from '../../components/button/button.jsx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import api from '../../constants/api.js';
+import { saveUsuario } from '../../storage/storage.usuario.js';
+import { LoadUsuario } from '../../storage/storage.usuario.js';
 
 function Login(props) {
     const [email,setEmail] = useState();
-    const [passw,setPassw] = useState();
+    const [senha,setSenha] = useState();
+    const [loading,setLoading] = useState(false);
 
-    function executeLogin(){
-        setEmail("123456");
+    async function ProcessarLogin(){
+        try {
+            // setLoading(true)
+           
+          const response = await api.post("/usuarios/login",{
+            email,
+            senha
+          });
+
+          await saveUsuario(response.data);
+
+          Alert.alert("Sucesso Sr(a). "+response.data.nome)
+        //   console.log(response.data)
+        } catch (error) {
+            setLoading(false)
+            if(error.response?.data.error){
+                
+                Alert.alert(error.response?.data.error)
+            }else{
+                Alert.alert("Ocorreu um erro tente. novamente: "+error)
+
+            }
+        }
     }
+
+    async function CarregarDados() {
+        try{
+            const usuario = await LoadUsuario();
+            console.log(usuario);
+        }catch(error){
+
+        }
+    }
+
+    useEffect(()=>{
+        CarregarDados();
+    },[])
+
     return (
         <View style={styles.container}>
             <Header texto="Acesse sua conta..." />
@@ -23,11 +62,11 @@ function Login(props) {
 
                 </View>
                 <View style={styles.form}>
-                    <TextBox label="Senha" onChangeText={(texto)=>setPassw(texto)} value={passw} placeholders="Digite Sua Senha" isPasswords />
+                    <TextBox label="Senha" onChangeText={(texto)=>setSenha(texto)} value={senha} placeholders="Digite Sua Senha" isPasswords />
 
                 </View>
                 <View style={styles.form}>
-                    <Button texto="Acessar" onPress={executeLogin} />
+                    <Button texto="Acessar" onPress={ProcessarLogin} isLoading={loading} />
 
                 </View>
             </View>

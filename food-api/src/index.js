@@ -17,6 +17,6 @@ app.use(
 app.use(router);
 
 
-app.listen(3001,  ()=>{
-    console.log("Servidor rodando na porta:...: 3001")
+app.listen(6001,  ()=>{
+    console.log("Servidor rodando na porta:...: 6001")
 });

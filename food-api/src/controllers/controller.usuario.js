@@ -17,7 +17,7 @@ async function Login(req, res) {
 
     const usuario = await serviceUsuario.Login(email, senha);
 
-    if (usuario.lenght == 0) {
+    if (usuario.length == 0) {
         res.status(401).json({ error: "Email ou Senha Invalido" })
     } else {
         res.status(200).json(usuario);

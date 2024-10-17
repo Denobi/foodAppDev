@@ -17,7 +17,7 @@ function Routes() {
             <Stack.Navigator  >
             
                 
-            <Stack.Screen name="detalheProduto" component={DetalheProduto} options={{headerShown:false}}/>
+            {/* <Stack.Screen name="detalheProduto" component={DetalheProduto} options={{headerShown:false}}/> */}
                
                 <Stack.Screen name="login" component={Login} options={{headerShown:false}}/>
                 <Stack.Screen name="registro" component={Registro} options={{ 
